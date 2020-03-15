@@ -1,0 +1,59 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>30</x><y>270</y><w>310</w><h>330</h></coordinates><panel_attributes>controller :: PatientController
+--
+
+
+--
++removePatient(ActionEvent e): void
++editPatient(ActionEvent e): void
++seeDossier(AE e): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>30</y><w>270</w><h>190</h></coordinates><panel_attributes>model :: Patient
+--
+-id: int
+-nom: StringProperty
+-prenom: StringProperty
+-dateNaissance: ObjectProperty&lt;Date&gt;
+-profession: StringProperty
+-adresse: StringProperty
+-telephone: StringProperty
+-numeroSecuriteSociale: StringProperty
+--
++getters
++setters</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>30</y><w>260</w><h>190</h></coordinates><panel_attributes>controller :: MainController
+--
+
+--
++goToPatientPage(e): void
+--
+Responsibilities
+-- Permettre la navigation entre les modules</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>30</y><w>260</w><h>190</h></coordinates><panel_attributes>controller :: MainController
+--
+
+--
++goToPatientPage(e): void
+--
+Responsibilities
+-- Permettre la navigation entre les modules</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>940</x><y>30</y><w>210</w><h>130</h></coordinates><panel_attributes>model :: Dossier
+--
+-id: int
+-validitePatient: BooleanProperty
+-cin: StringProperty
+-patient: Patient
+--
++getter
++setter</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>290</y><w>210</w><h>130</h></coordinates><panel_attributes>model :: Consultation
+--
+-id: int
+-date: ObjectProperty&lt;Date&gt;
+-observations: StringProperty
+-dossier: Dossier
+--
++getter
++setter</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>920</x><y>250</y><w>210</w><h>140</h></coordinates><panel_attributes>model :: Prescription
+--
+-id: int
+-nomMedicament: StringProperty
+-posologie: StringProperty
+-dureeTraitement: StringProperty
+-consultation: Consultation
+--
++getter
++setter</panel_attributes><additional_attributes></additional_attributes></element></diagram>
