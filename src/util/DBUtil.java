@@ -1,9 +1,10 @@
 package util;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class DBUtil {
 
@@ -16,5 +17,11 @@ public class DBUtil {
                 .configure()
                 .build();
         sessionFactory = new MetadataSources( serviceRegistry ).buildMetadata().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.close();
+    }
+
+    public static Session getSession(){
+        return sessionFactory.openSession();
     }
 }

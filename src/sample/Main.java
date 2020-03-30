@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.Certificat;
+import org.hibernate.Session;
 import util.DBUtil;
 
 public class Main extends Application {
@@ -16,11 +18,23 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+        Session session = DBUtil.getSession();
+        session.beginTransaction();
+        Certificat c = new Certificat();
+        session.save(c);
+        session.getTransaction().commit();
+        session.close();
     }
 
 
     public static void main(String[] args) {
         DBUtil.init();
+        Session session = DBUtil.getSession();
+        session.beginTransaction();
+        Certificat c = new Certificat();
+        session.save(c);
+        session.getTransaction().commit();
+        session.close();
         launch(args);
     }
 }
