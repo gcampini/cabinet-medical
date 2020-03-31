@@ -61,7 +61,7 @@ public class PrescriptionDto {
     }
 
     @ManyToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
-    @JoinColumn(name="dossier_fk", insertable=false, updatable=false)
+    @JoinColumn(name="consulatation_fk", insertable=false, updatable=false)
     public ConsultationDto getConsultation() {
         return consultation;
     }

@@ -14,7 +14,7 @@ public class ConsultationDto {
     private String observations;
     private DossierDto dossier;
     private Set<PrescriptionDto> prescriptions;
-    private Set<CertificatDto> certificats;
+    private CertificatDto certificats;
     private Set<ExamenDto> examens;
 
 
@@ -67,7 +67,7 @@ public class ConsultationDto {
     }
 
     @OneToMany
-    @JoinColumn(name="dossier_fk")
+    @JoinColumn(name="prescription_fk")
     public Set<PrescriptionDto> getPrescriptions() {
         return prescriptions;
     }
@@ -79,17 +79,17 @@ public class ConsultationDto {
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    public Set<CertificatDto> getCertificats() {
+    public CertificatDto getCertificats() {
         return certificats;
     }
 
-    public void setCertificats(Set<CertificatDto> certificats) {
+    public void setCertificats(CertificatDto certificats) {
         this.certificats = certificats;
         //notifyAll();
     }
 
     @OneToMany
-    @JoinColumn(name="dossier_fk")
+    @JoinColumn(name="examen_fk")
     public Set<ExamenDto> getExamens() {
         return examens;
     }

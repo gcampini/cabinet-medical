@@ -28,13 +28,11 @@ public class DossierDto{
         //notifyAll();
     }
 
-    public boolean isValiditePatient() {
+    @Basic
+    public Boolean getValiditePatient() {
         return validitePatient;
     }
 
-    public Boolean validitePatient() {
-        return validitePatient;
-    }
 
     public void setValiditePatient(boolean validitePatient) {
         this.validitePatient = validitePatient;
@@ -66,7 +64,7 @@ public class DossierDto{
     }
 
     @OneToMany
-    @JoinColumn(name="dossier_fk")
+    @JoinColumn(name="consultation_fk")
     public Set<ConsultationDto> getConsultations() {
         return consultations;
     }
