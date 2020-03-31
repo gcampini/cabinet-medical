@@ -32,7 +32,7 @@ public class Dossier implements Observable {
 
     public void setId(int id) {
         this.id = id;
-        notifyAll();
+        //notifyAll();
     }
 
     public boolean isValiditePatient() {
@@ -45,7 +45,7 @@ public class Dossier implements Observable {
 
     public void setValiditePatient(boolean validitePatient) {
         this.validitePatient.set(validitePatient);
-        notifyAll();
+        //notifyAll();
     }
 
     public String getCin() {
@@ -58,7 +58,7 @@ public class Dossier implements Observable {
 
     public void setCin(String cin) {
         this.cin.set(cin);
-        notifyAll();
+        //notifyAll();
     }
 
     public Patient getPatient() {
@@ -71,7 +71,7 @@ public class Dossier implements Observable {
 
     public void setPatient(Patient patient) {
         this.patient.set(patient);
-        notifyAll();
+        //notifyAll();
     }
 
     public ObservableList<Consultation> getConsultations() {
@@ -80,6 +80,6 @@ public class Dossier implements Observable {
 
     public void setConsultations(ObservableList<Consultation> consultations) {
         this.consultations = consultations;
-        notifyAll();
+        //notifyAll();
     }
 }

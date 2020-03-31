@@ -15,6 +15,6 @@ public class CertificatDispense extends Certificat {
 
     public void setPeriode(int periode) {
         this.periode.set(periode);
-        notifyAll();
+        //notifyAll();
     }
 }

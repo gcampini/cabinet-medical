@@ -35,7 +35,7 @@ public class Patient implements Observable {
 
     public void setId(int id) {
         this.id = id;
-        notifyAll();
+        //notifyAll();
     }
 
     public String getNom() {
@@ -48,7 +48,7 @@ public class Patient implements Observable {
 
     public void setNom(String nom) {
         this.nom.set(nom);
-        notifyAll();
+        //notifyAll();
     }
 
     public String getPrenom() {
@@ -61,7 +61,7 @@ public class Patient implements Observable {
 
     public void setPrenom(String prenom) {
         this.prenom.set(prenom);
-        notifyAll();
+        //notifyAll();
     }
 
     public Date getDateNaissance() {
@@ -74,7 +74,7 @@ public class Patient implements Observable {
 
     public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance.set(dateNaissance);
-        notifyAll();
+        //notifyAll();
     }
 
     public String getProfession() {
@@ -87,7 +87,7 @@ public class Patient implements Observable {
 
     public void setProfession(String profession) {
         this.profession.set(profession);
-        notifyAll();
+        //notifyAll();
     }
 
     public String getAdresse() {
@@ -100,7 +100,7 @@ public class Patient implements Observable {
 
     public void setAdresse(String adresse) {
         this.adresse.set(adresse);
-        notifyAll();
+        //notifyAll();
     }
 
     public String getTelephone() {
@@ -113,7 +113,7 @@ public class Patient implements Observable {
 
     public void setTelephone(String telephone) {
         this.telephone.set(telephone);
-        notifyAll();
+        //notifyAll();
     }
 
     public String getNumeroSecuriteSociale() {
@@ -126,7 +126,7 @@ public class Patient implements Observable {
 
     public void setNumeroSecuriteSociale(String numeroSecuriteSociale) {
         this.numeroSecuriteSociale.set(numeroSecuriteSociale);
-        notifyAll();
+        //notifyAll();
     }
 
     public Dossier getDossier() {
@@ -139,6 +139,6 @@ public class Patient implements Observable {
 
     public void setDossier(Dossier dossier) {
         this.dossier.set(dossier);
-        notifyAll();
+        //notifyAll();
     }
 }

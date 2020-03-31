@@ -15,6 +15,6 @@ public class CertificatAptitude extends Certificat {
 
     public void setAptitude(boolean aptitude) {
         this.aptitude.set(aptitude);
-        notifyAll();
+        //notifyAll();
     }
 }

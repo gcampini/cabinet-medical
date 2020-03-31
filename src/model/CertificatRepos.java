@@ -15,6 +15,6 @@ public class CertificatRepos extends Certificat {
 
     public void setNombreJours(int nombreJours) {
         this.nombreJours.set(nombreJours);
-        notifyAll();
+        //notifyAll();
     }
 }

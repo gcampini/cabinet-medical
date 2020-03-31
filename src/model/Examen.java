@@ -27,7 +27,7 @@ public class Examen implements Observable {
 
     public void setId(int id) {
         this.id = id;
-        notifyAll();
+        //notifyAll();
     }
 
     public String getType() {
@@ -40,7 +40,7 @@ public class Examen implements Observable {
 
     public void setType(String type) {
         this.type.set(type);
-        notifyAll();
+        //notifyAll();
     }
 
     public Consultation getConsultation() {
@@ -53,6 +53,6 @@ public class Examen implements Observable {
 
     public void setConsultation(Consultation consultation) {
         this.consultation.set(consultation);
-        notifyAll();
+        //notifyAll();
     }
 }

@@ -34,7 +34,7 @@ public class Consultation implements Observable {
 
     public void setId(int id) {
         this.id = id;
-        notifyAll();
+        //////notifyAll();
     }
 
     public Date getDate() {
@@ -47,7 +47,7 @@ public class Consultation implements Observable {
 
     public void setDate(Date date) {
         this.date.set(date);
-        notifyAll();
+        //notifyAll();
     }
 
     public String getObservations() {
@@ -60,7 +60,7 @@ public class Consultation implements Observable {
 
     public void setObservations(String observations) {
         this.observations.set(observations);
-        notifyAll();
+        //notifyAll();
     }
 
     public Dossier getDossier() {
@@ -73,7 +73,7 @@ public class Consultation implements Observable {
 
     public void setDossier(Dossier dossier) {
         this.dossier.set(dossier);
-        notifyAll();
+        //notifyAll();
     }
 
     public ObservableList<Prescription> getPrescriptions() {
@@ -82,7 +82,7 @@ public class Consultation implements Observable {
 
     public void setPrescriptions(ObservableList<Prescription> prescriptions) {
         this.prescriptions = prescriptions;
-        notifyAll();
+        //notifyAll();
     }
 
     public ObservableList<Certificat> getCertificats() {
@@ -91,7 +91,7 @@ public class Consultation implements Observable {
 
     public void setCertificats(ObservableList<Certificat> certificats) {
         this.certificats = certificats;
-        notifyAll();
+        //notifyAll();
     }
 
     public ObservableList<Examen> getExamens() {
@@ -100,6 +100,6 @@ public class Consultation implements Observable {
 
     public void setExamens(ObservableList<Examen> examens) {
         this.examens = examens;
-        notifyAll();
+        //notifyAll();
     }
 }

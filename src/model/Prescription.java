@@ -30,7 +30,7 @@ public class Prescription implements Observable {
 
     public void setId(int id) {
         this.id = id;
-        notifyAll();
+        //notifyAll();
     }
 
     public String getNomMedicament() {
@@ -43,7 +43,7 @@ public class Prescription implements Observable {
 
     public void setNomMedicament(String nomMedicament) {
         this.nomMedicament.set(nomMedicament);
-        notifyAll();
+        //notifyAll();
     }
 
     public String getPosologie() {
@@ -56,7 +56,7 @@ public class Prescription implements Observable {
 
     public void setPosologie(String posologie) {
         this.posologie.set(posologie);
-        notifyAll();
+        //notifyAll();
     }
 
     public String getDureeTraitement() {
@@ -69,7 +69,7 @@ public class Prescription implements Observable {
 
     public void setDureeTraitement(String dureeTraitement) {
         this.dureeTraitement.set(dureeTraitement);
-        notifyAll();
+        //notifyAll();
     }
 
     public Consultation getConsultation() {
@@ -82,6 +82,6 @@ public class Prescription implements Observable {
 
     public void setConsultation(Consultation consultation) {
         this.consultation.set(consultation);
-        notifyAll();
+        //notifyAll();
     }
 }
