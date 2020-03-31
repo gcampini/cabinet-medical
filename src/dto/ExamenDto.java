@@ -36,7 +36,7 @@ public class ExamenDto {
         //notifyAll();
     }
 
-    e@ManyToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
+    @ManyToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
     @JoinColumn(name="dossier_fk", insertable=false, updatable=false)
     public ConsultationDto getConsultation() {
         return consultation;
