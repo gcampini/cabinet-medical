@@ -36,6 +36,9 @@
         <mapping class="dto.CertificatDto"/>
         <mapping class="dto.ConsultationDto"/>
         <mapping class="dto.DossierDto"/>
+        <mapping class="dto.ExamenDto"/>
+        <mapping class="dto.PatientDto"/>
+        <mapping class="dto.PrescriptionDto"/>
 
 
     </session-factory>
