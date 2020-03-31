@@ -54,7 +54,7 @@ public class PatientDto {
         //notifyAll();
     }
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     public Date getDateNaissance() {
         return dateNaissance;
     }
@@ -109,8 +109,8 @@ public class PatientDto {
         //notifyAll();
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+
+    @OneToOne(mappedBy = "patient")
     public DossierDto getDossier() {
         return dossierDto;
     }

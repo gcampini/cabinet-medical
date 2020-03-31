@@ -52,8 +52,9 @@ public class DossierDto{
         //notifyAll();
     }
 
+
     @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @JoinColumn(name="patient_fk")
     public PatientDto getPatient() {
         return patient;
     }
