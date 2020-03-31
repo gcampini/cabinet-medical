@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.hibernate.Session;
 import util.DBUtil;
 
 public class Main extends Application {
@@ -16,11 +17,14 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+
     }
 
 
     public static void main(String[] args) {
         DBUtil.init();
+        Session session = DBUtil.getSession();
+        session.close();
         launch(args);
     }
 }

@@ -33,7 +33,10 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
 
-        <mapping class="model.Certificat"/>
+        <mapping class="dto.CertificatDto"/>
+        <mapping class="dto.ConsultationDto"/>
+        <mapping class="dto.DossierDto"/>
+
 
     </session-factory>
 

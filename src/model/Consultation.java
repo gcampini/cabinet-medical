@@ -5,9 +5,12 @@ import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
+import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Consultation implements Observable {
 
    private int id;
@@ -28,15 +31,20 @@ public class Consultation implements Observable {
 
     }
 
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-        //////notifyAll();
+        //notifyAll();
     }
 
+    @Column(name = "Consultation_Date")
+    @Temporal(TemporalType.TIMESTAMP)
     public Date getDate() {
         return date.get();
     }
@@ -50,6 +58,7 @@ public class Consultation implements Observable {
         //notifyAll();
     }
 
+    @Basic
     public String getObservations() {
         return observations.get();
     }
@@ -63,6 +72,8 @@ public class Consultation implements Observable {
         //notifyAll();
     }
 
+
+    @ManyToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
     public Dossier getDossier() {
         return dossier.get();
     }

@@ -1,27 +1,15 @@
-package model;
+package dto;
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Certificat implements Observable {
-
+public class CertificatDto {
 
     private int id;
-
-    @Override
-    public void addListener(InvalidationListener invalidationListener) {
-
-    }
-
-    @Override
-    public void removeListener(InvalidationListener invalidationListener) {
-
-    }
 
     @Id
     @GeneratedValue(generator="increment")
