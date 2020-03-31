@@ -2,9 +2,7 @@ package dto;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class ExamenDto {
@@ -27,6 +25,7 @@ public class ExamenDto {
         //notifyAll();
     }
 
+    @Basic
     public String getType() {
         return type;
     }
@@ -37,6 +36,8 @@ public class ExamenDto {
         //notifyAll();
     }
 
+    e@ManyToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
+    @JoinColumn(name="dossier_fk", insertable=false, updatable=false)
     public ConsultationDto getConsultation() {
         return consultation;
     }
