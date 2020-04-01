@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.RDVController"
+            prefHeight="400.0" prefWidth="600.0"
+          style="-fx-background-color: grey;">
+    <columnConstraints>
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0"  />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    </rowConstraints>
+    <Label text="Nom" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="1"
+           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Prenom" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="2"
+           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label text="Date" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="3"
+           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
+    <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <Label text="Heure" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="4"
+           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}" />
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+</GridPane>

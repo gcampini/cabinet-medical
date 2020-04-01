@@ -42,6 +42,7 @@
         <mapping class="dto.ExamenDto"/>
         <mapping class="dto.PatientDto"/>
         <mapping class="dto.PrescriptionDto"/>
+        <mapping class="dto.RDVDto"/>
 
 
     </session-factory>

@@ -4,5 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" style="-fx-background-color: grey;">
+    <Button text="truc" style="-fx-background-color: orange;-fx-text-fill: white" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label text="ce que tu veux" fx:id="monLabel" onMouseClicked="#changeText" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
 </GridPane>
