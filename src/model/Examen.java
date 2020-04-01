@@ -5,9 +5,6 @@ import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 
-import javax.persistence.Entity;
-
-@Entity
 public class Examen implements Observable {
 
     private int id;

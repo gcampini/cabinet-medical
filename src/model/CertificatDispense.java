@@ -3,6 +3,7 @@ package model;
 import javafx.beans.property.IntegerProperty;
 
 public class CertificatDispense extends Certificat {
+
     private IntegerProperty periode;
 
     public int getPeriode() {

@@ -6,11 +6,7 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
-import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
-
-@Entity
 public class Dossier implements Observable {
 
     private int id;
@@ -30,9 +26,7 @@ public class Dossier implements Observable {
 
     }
 
-    @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy = "increment")
+
     public int getId() {
         return id;
     }
@@ -55,7 +49,6 @@ public class Dossier implements Observable {
         //notifyAll();
     }
 
-    @Basic
     public String getCin() {
         return cin.get();
     }
@@ -69,7 +62,6 @@ public class Dossier implements Observable {
         //notifyAll();
     }
 
-    @Transient
     public Patient getPatient() {
         return patient.get();
     }
@@ -83,7 +75,6 @@ public class Dossier implements Observable {
         //notifyAll();
     }
 
-    @OneToMany
     public ObservableList<Consultation> getConsultations() {
         return consultations;
     }

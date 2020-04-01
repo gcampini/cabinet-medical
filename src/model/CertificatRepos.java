@@ -3,6 +3,7 @@ package model;
 import javafx.beans.property.IntegerProperty;
 
 public class CertificatRepos extends Certificat {
+
     private IntegerProperty nombreJours;
 
     public int getNombreJours() {

@@ -3,6 +3,7 @@ package model;
 import javafx.beans.property.BooleanProperty;
 
 public class CertificatAptitude extends Certificat {
+
     private BooleanProperty aptitude;
 
     public boolean isAptitude() {

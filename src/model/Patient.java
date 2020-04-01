@@ -5,10 +5,8 @@ import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 
-import javax.persistence.Entity;
 import java.util.Date;
 
-@Entity
 public class Patient implements Observable {
 
     private int id;
