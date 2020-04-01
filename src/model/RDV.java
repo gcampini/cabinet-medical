@@ -14,6 +14,10 @@ public class RDV implements Observable {
     private StringProperty prenom;
     private ObjectProperty<Date> date;
 
+    public RDV() {
+
+    }
+
     @Override
     public void addListener(InvalidationListener invalidationListener) {
 
