@@ -31,9 +31,12 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
 
+        <mapping class="dto.CertificatAptitudeDto"/>
+        <mapping class="dto.CertificatDispenseDto"/>
         <mapping class="dto.CertificatDto"/>
+        <mapping class="dto.CertificatReposDto"/>
         <mapping class="dto.ConsultationDto"/>
         <mapping class="dto.DossierDto"/>
         <mapping class="dto.ExamenDto"/>

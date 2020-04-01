@@ -2,14 +2,15 @@ package dto;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy= InheritanceType.JOINED)
 public class CertificatDto {
 
     private int id;
+    private ConsultationDto consultationDto;
+
 
     @Id
     @GeneratedValue(generator="increment")
@@ -22,4 +23,16 @@ public class CertificatDto {
         this.id = id;
         //notifyAll();
     }
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="certificat_fk")
+    public ConsultationDto getConsultationDto() {
+        return consultationDto;
+    }
+
+    public void setConsultationDto(ConsultationDto consultationDto) {
+        this.consultationDto = consultationDto;
+    }
+
+
 }
