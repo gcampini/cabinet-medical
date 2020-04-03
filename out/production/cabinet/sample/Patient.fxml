@@ -8,7 +8,7 @@
 
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="sample.RDVController"
+          fx:controller="sample.PatientController"
           prefHeight="400.0" prefWidth="600.0"
           style="-fx-background-color: grey;">
     <columnConstraints>
@@ -33,7 +33,7 @@
     <TextField fx:id="ChampPrenom" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
     <Label text="Date de naissance" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="3"
            prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField fx:id="ChampDateNaissance" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <DatePicker fx:id="ChampDateNaissance" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
     <Label text="Profession" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="4"
            prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
     <TextField fx:id="ChampProfession" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
@@ -46,6 +46,7 @@
     <Label text="NumeroSecuriteSociale" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="7"
            prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
     <TextField fx:id="ChampNumeroSecuriteSociale" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    <Button text="validé" onMouseClicked="#save" style="-fx-background-color: orange;-fx-text-fill: white" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
 
 
 

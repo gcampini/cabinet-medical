@@ -3,22 +3,32 @@ package model;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Patient implements Observable {
 
     private int id;
     private StringProperty nom;
     private StringProperty prenom;
-    private ObjectProperty<Date> dateNaissance;
+    private ObjectProperty<LocalDate> dateNaissance;
     private StringProperty profession;
     private StringProperty adresse;
     private StringProperty telephone;
     private StringProperty numeroSecuriteSociale;
 
     public Patient() {
+        this.nom = new SimpleStringProperty("");
+        this.prenom = new SimpleStringProperty("");
+        this.dateNaissance = new SimpleObjectProperty<LocalDate>(LocalDate.now());
+        this.profession = new SimpleStringProperty("");
+        this.adresse = new SimpleStringProperty("");
+        this.telephone = new SimpleStringProperty("");
+        this.numeroSecuriteSociale = new SimpleStringProperty("");
+
     }
 
     private ObjectProperty<Dossier> dossier;
@@ -68,15 +78,15 @@ public class Patient implements Observable {
         //notifyAll();
     }
 
-    public Date getDateNaissance() {
+    public LocalDate getDateNaissance() {
         return dateNaissance.get();
     }
 
-    public ObjectProperty<Date> dateNaissanceProperty() {
+    public ObjectProperty<LocalDate> dateNaissanceProperty() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(LocalDate dateNaissance) {
         this.dateNaissance.set(dateNaissance);
         //notifyAll();
     }
