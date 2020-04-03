@@ -16,6 +16,9 @@ public class Examen implements Observable {
 
     }
 
+    public Examen() {
+    }
+
     @Override
     public void removeListener(InvalidationListener invalidationListener) {
 

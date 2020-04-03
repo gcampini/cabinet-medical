@@ -1,4 +1,4 @@
 package sample;
 
-public class ConsultationController {
-}
+//public class ConsultationController implements Initializable {
+//}

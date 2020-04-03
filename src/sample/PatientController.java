@@ -1,4 +1,4 @@
 package sample;
 
-public class PatientController {
+public class PatientController implements Initializable {
 }

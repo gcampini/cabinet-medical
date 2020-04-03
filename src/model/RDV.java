@@ -3,19 +3,23 @@ package model;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class RDV implements Observable {
 
     private int id;
     private StringProperty nom;
     private StringProperty prenom;
-    private ObjectProperty<Date> date;
+    private ObjectProperty<LocalDate> date;
 
     public RDV() {
-
+        this.nom = new SimpleStringProperty("");
+        this.prenom = new SimpleStringProperty("");
+        this.date = new SimpleObjectProperty<LocalDate>(LocalDate.now());
     }
 
     @Override
@@ -61,16 +65,16 @@ public class RDV implements Observable {
         this.prenom.set(prenom);
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date.get();
     }
 
-    public ObjectProperty<Date> dateProperty() {
+    public ObjectProperty<LocalDate> dateProperty() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date.set(date);
+    public void setDate(LocalDate localdate) {
+        this.date.set(localdate);
         //notifyAll();
     }
 

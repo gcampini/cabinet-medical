@@ -13,6 +13,10 @@ public class Dossier implements Observable {
     private BooleanProperty validitePatient;
     private StringProperty cin;
     private ObjectProperty<Patient> patient;
+
+    public Dossier() {
+    }
+
     private ObservableList<Consultation> consultations;
 
 

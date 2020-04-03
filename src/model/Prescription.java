@@ -15,6 +15,9 @@ public class Prescription implements Observable {
     private ObjectProperty<Consultation> consultation;
 
 
+    public Prescription() {
+    }
+
     @Override
     public void addListener(InvalidationListener invalidationListener) {
 

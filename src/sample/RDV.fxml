@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -21,18 +18,21 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0"  />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
     </rowConstraints>
     <Label text="Nom" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="1"
            prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" text="${controller.RDV.nom}"/>
+    <TextField fx:id="ChampNom" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
     <Label text="Prenom" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="2"
            prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" text="${controller.RDV.nom}"/>
+    <TextField fx:id="ChampPrenom" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
     <Label text="Date" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="3"
            prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <DatePicker fx:id="ChampDate" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
     <Label text="Heure" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="4"
            prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}" />
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" text="${controller.RDV.nom}"/>
+    <TextField fx:id="ChampHeure" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Button text="validé" onMouseClicked="#save" style="-fx-background-color: orange;-fx-text-fill: white" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
 
 </GridPane>

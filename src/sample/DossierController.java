@@ -1,4 +1,4 @@
 package sample;
 
-public class DossierController {
-}
+//public class DossierController implements Initializable {
+//}

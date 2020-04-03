@@ -39,6 +39,8 @@ public class Consultation implements Observable {
         //notifyAll();
     }
 
+    public Consultation() {
+    }
 
     public Date getDate() {
         return date.get();

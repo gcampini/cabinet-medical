@@ -1,4 +1,4 @@
 package sample;
 
-public class CertificatAptitudeController {
+public class CertificatAptitudeController extends CertificatController {
 }

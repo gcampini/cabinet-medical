@@ -17,6 +17,10 @@ public class Patient implements Observable {
     private StringProperty adresse;
     private StringProperty telephone;
     private StringProperty numeroSecuriteSociale;
+
+    public Patient() {
+    }
+
     private ObjectProperty<Dossier> dossier;
 
     @Override
