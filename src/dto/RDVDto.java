@@ -16,8 +16,6 @@ public class RDVDto {
     private String prenom;
     private Date date;
 
-
-
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")

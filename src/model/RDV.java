@@ -15,11 +15,13 @@ public class RDV implements Observable {
     private StringProperty nom;
     private StringProperty prenom;
     private ObjectProperty<LocalDate> date;
+    private StringProperty heure;
 
     public RDV() {
         this.nom = new SimpleStringProperty("");
         this.prenom = new SimpleStringProperty("");
-        this.date = new SimpleObjectProperty<LocalDate>(LocalDate.now());
+        this.date = new SimpleObjectProperty<>(LocalDate.now());
+        this.heure = new SimpleStringProperty("");
     }
 
     @Override
@@ -78,6 +80,15 @@ public class RDV implements Observable {
         //notifyAll();
     }
 
+    public String getHeure() {
+        return heure.get();
+    }
 
+    public StringProperty heureProperty() {
+        return heure;
+    }
 
+    public void setHeure(String heure) {
+        this.heure.set(heure);
+    }
 }

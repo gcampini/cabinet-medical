@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
@@ -8,6 +9,8 @@ import model.RDV;
 import services.RDVServices;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class RDVController implements Initializable {
@@ -63,7 +66,7 @@ public class RDVController implements Initializable {
         this.getRdv().nomProperty().bindBidirectional(ChampNom.textProperty());
         this.getRdv().prenomProperty().bindBidirectional(ChampPrenom.textProperty());
         this.getRdv().dateProperty().bindBidirectional(ChampDate.valueProperty());
-        //this.getRdv().heureProperty().bindBidirectional(ChampHeure.textProperty());
+        this.getRdv().heureProperty().bindBidirectional(ChampHeure.textProperty());
     }
 
     public void save(){
