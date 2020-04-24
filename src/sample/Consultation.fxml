@@ -6,9 +6,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.ConsultationController"
-            prefHeight="400.0" prefWidth="600.0">
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="sample.RDVController"
+          prefHeight="400.0" prefWidth="600.0"
+          style="-fx-background-color: grey;">
+    <columnConstraints>
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0"  />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    </rowConstraints>
+    <Label text="Date" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="1"
+           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
+    <DatePicker fx:id="ChampDate" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Prenom" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="2"
+           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
+    <TextField fx:id="ChampPrenom" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label text="Heure" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="4"
+           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}" />
+    <TextField fx:id="ChampHeure" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Button text="validé" onMouseClicked="#save" style="-fx-background-color: orange;-fx-text-fill: white" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
 
-</AnchorPane>
+
+</GridPane>
+

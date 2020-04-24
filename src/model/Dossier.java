@@ -4,6 +4,7 @@ import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 
@@ -15,6 +16,9 @@ public class Dossier implements Observable {
     private ObjectProperty<Patient> patient;
 
     public Dossier() {
+        this.validitePatient = new BooleanProperty("");
+        this.cin = new SimpleStringProperty("");
+        this.patient = new ObservableList<Consultation>(Patient);
     }
 
     private ObservableList<Consultation> consultations;

@@ -15,12 +15,11 @@ import java.util.ResourceBundle;
 
 public class RDVController implements Initializable {
 
+    private RDV rdv;
 
     private Double RowHeight = 100.0;
 
     private Double ColumnWidth = 100.0;
-
-    private RDV rdv;
 
     public Double getRowHeight() {
         return RowHeight;

@@ -3,21 +3,35 @@ package model;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 
 public class Consultation implements Observable {
 
    private int id;
-   private ObjectProperty<Date> date;
+   private ObjectProperty<LocalDate> date;
    private StringProperty observations;
    private ObjectProperty<Dossier> dossier;
    private ObservableList<Prescription> prescriptions;
    private ObservableList<Certificat> certificats;
    private ObservableList<Examen> examens;
+
+
+    public Consultation() {
+        this.date = new SimpleObjectProperty<LocalDate>(LocalDate.now());
+        this.observations = new SimpleStringProperty("");
+        this.dateNaissance = new SimpleObjectProperty<LocalDate>(LocalDate.now());
+        this.profession = new SimpleStringProperty("");
+        this.adresse = new SimpleStringProperty("");
+        this.telephone = new SimpleStringProperty("");
+        this.numeroSecuriteSociale = new SimpleStringProperty("");
+    }
+
 
     @Override
     public void addListener(InvalidationListener invalidationListener) {
@@ -29,7 +43,6 @@ public class Consultation implements Observable {
 
     }
 
-
     public int getId() {
         return id;
     }
@@ -39,18 +52,16 @@ public class Consultation implements Observable {
         //notifyAll();
     }
 
-    public Consultation() {
-    }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date.get();
     }
 
-    public ObjectProperty<Date> dateProperty() {
+    public ObjectProperty<LocalDate> dateProperty() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date.set(date);
         //notifyAll();
     }

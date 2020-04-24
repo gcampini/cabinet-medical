@@ -3,7 +3,9 @@ package model;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.ObservableList;
 
 public class Examen implements Observable {
 
@@ -17,6 +19,8 @@ public class Examen implements Observable {
     }
 
     public Examen() {
+        this.type = new SimpleStringProperty("");
+        this.consultation = new ObservableList<Consultation>(Consultation);
     }
 
     @Override

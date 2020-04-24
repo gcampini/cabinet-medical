@@ -1,38 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
 
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:controller="sample.PrescriptionController"
-          prefHeight="400.0" prefWidth="600.0"
-          style="-fx-background-color: grey;">
-    <columnConstraints>
-        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0"  />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-    </rowConstraints>
-    <Label text="Nom médicament" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="1"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" text="${controller.RDV.nom}"/>
-    <Label text="Posologie" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="2"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" text="${controller.RDV.nom}"/>
-    <Label text="Durée Traitement" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="3"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <Label text="Heure" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="4"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}" />
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" text="${controller.RDV.nom}"/>
-
-</GridPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Nom du médicament" />
+      <TextField />
+      <Label text="Posologie" />
+      <TextField />
+      <Label text="Duré du traitement" />
+      <TextField />
+      <Label text="consultation" />
+      <TextField />
+      <Button mnemonicParsing="false" text="Validé" />
+   </children>
+</VBox>
