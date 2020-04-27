@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 public class PatientDto {
@@ -18,6 +19,7 @@ public class PatientDto {
     private String telephone;
     private String numeroSecuriteSociale;
     private DossierDto dossierDto;
+    private Set<RDVDto> rdvs;
 
 
     @Id
@@ -109,12 +111,20 @@ public class PatientDto {
         //notifyAll();
     }
 
+    @OneToMany
+    @JoinColumn
+    public Set<RDVDto> getRdvs() {
+        return rdvs;
+    }
+
+    public void setRdvs(Set<RDVDto> rdvs) {
+        this.rdvs = rdvs;
+    }
 
     @OneToOne(mappedBy = "patient")
     public DossierDto getDossier() {
         return dossierDto;
     }
-
 
     public void setDossier(DossierDto dossier) {
         this.dossierDto = dossier;

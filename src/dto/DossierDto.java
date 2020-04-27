@@ -14,8 +14,6 @@ public class DossierDto{
     private PatientDto patient;
     private Set<ConsultationDto> consultations;
 
-
-
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")

@@ -22,7 +22,7 @@
                </children>
             </AnchorPane>
             <Button mnemonicParsing="false" onAction="#goToRDV" prefHeight="25.0" prefWidth="264.0" text="Rendez-vous" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="306.0" text="Gestion fiches" />
+            <Button mnemonicParsing="false" onAction="#goToPatient" prefHeight="25.0" prefWidth="306.0" text="Gestion fiches" />
          </children>
       </VBox>
       <BorderPane layoutX="247.0" prefHeight="614.0" prefWidth="561.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

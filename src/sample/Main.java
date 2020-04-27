@@ -10,7 +10,6 @@ import util.DBUtil;
 
 public class Main extends Application {
 
-
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
@@ -20,11 +19,11 @@ public class Main extends Application {
 
     }
 
-
     public static void main(String[] args) {
         DBUtil.init();
         Session session = DBUtil.getSession();
         session.close();
         launch(args);
     }
+
 }

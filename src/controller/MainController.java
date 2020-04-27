@@ -29,4 +29,11 @@ public class MainController  implements Initializable {
         mainContainer.getChildren().setAll(root);
     }
 
+    @FXML
+    public void goToPatient() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/patient.fxml"));
+        mainContainer.getChildren().setAll(root);
+    }
+
+
 }

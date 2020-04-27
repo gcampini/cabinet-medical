@@ -1,14 +1,12 @@
 package controller;
 
+import dto.PatientDto;
 import dto.RDVDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import org.hibernate.Session;
@@ -22,7 +20,10 @@ import java.util.stream.Collectors;
 
 public class RDVController implements Initializable {
 
+
     private List<RDVDto> rdvs = new ArrayList<>();
+
+    private List<PatientDto> patients = new ArrayList<>();
 
     private RDVDto selectedRDV;
 
@@ -38,6 +39,8 @@ public class RDVController implements Initializable {
     @FXML
     private VBox form;
     @FXML
+    private ComboBox patientField;
+    @FXML
     private DatePicker dateField;
     @FXML
     private TextField timeField;
@@ -46,7 +49,7 @@ public class RDVController implements Initializable {
     public void buildList() {
         rdvs = getAllRDV();
         ObservableList<String> data = FXCollections.observableArrayList(
-                rdvs.stream().map(rdv -> rdv.getDate() + " | " + rdv.getNom() + " " + rdv.getPrenom()).collect(Collectors.toList()
+                rdvs.stream().map(rdv -> rdv.getDate() + " | " + rdv.getPatient().getNom() + " " + rdv.getPatient().getPrenom()).collect(Collectors.toList()
         ));
 
         list.setItems(data);
@@ -61,6 +64,13 @@ public class RDVController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         buildList();
         selectRDV(null);
+
+        patients = PatientController.getAllPatients();
+
+        patientField.setItems(FXCollections.observableArrayList(
+                patients.stream().map(p -> p.getNom() + " " + p.getPrenom()).collect(Collectors.toList())));
+
+
     }
 
     @FXML
@@ -87,16 +97,17 @@ public class RDVController implements Initializable {
         boolean deleteButtonVisisble = false;
 
         if (rdv != null) {
-                title = "RDV sélectionné";
-                deleteButtonVisisble = true;
+            title = "RDV sélectionné";
+            deleteButtonVisisble = true;
 
-    Date date = rdv.getDate();
-    LocalDateTime ldt = date.toInstant()
-            .atZone(ZoneId.systemDefault())
-            .toLocalDateTime();
-    dateField.setValue(ldt.toLocalDate());
-    timeField.setText(ldt.getHour() + ":" + ldt.getMinute());
-            form.setVisible(true);
+            patientField.getSelectionModel().select(patients.indexOf(rdv.getPatient()));
+            Date date = rdv.getDate();
+            LocalDateTime ldt = date.toInstant()
+                    .atZone(ZoneId.systemDefault())
+                    .toLocalDateTime();
+            dateField.setValue(ldt.toLocalDate());
+            timeField.setText(ldt.getHour() + ":" + ldt.getMinute());
+                    form.setVisible(true);
 
         } else {
             form.setVisible(false);
@@ -118,8 +129,7 @@ public class RDVController implements Initializable {
     public void save() {
         RDVDto dto = new RDVDto();
         if (selectedRDV != null) dto.setId(selectedRDV.getId());
-        //dto.setNom(rdv.getNom());
-        //dto.setPrenom(rdv.getPrenom());
+        dto.setPatient(patients.get(patientField.getSelectionModel().getSelectedIndex()));
         String[] heureMinute = timeField.getText().split(":");
         int heure = Integer.parseInt(heureMinute[0]);
         int min = Integer.parseInt(heureMinute[1]);

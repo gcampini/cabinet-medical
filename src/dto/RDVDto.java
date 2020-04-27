@@ -2,18 +2,14 @@ package dto;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class RDVDto {
 
     private int id;
-    private String nom;
-    private String prenom;
+    private PatientDto patient;
     private Date date;
 
     @Id
@@ -25,27 +21,15 @@ public class RDVDto {
 
     public void setId(int id) {
         this.id = id;
-        //notifyAll();
     }
 
-    @Basic
-    public String getNom() {
-        return nom;
+    @ManyToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
+    public PatientDto getPatient() {
+        return patient;
     }
 
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    @Basic
-    public String getPrenom() {
-        return prenom;
-    }
-
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setPatient(PatientDto patient) {
+        this.patient = patient;
     }
 
     @Basic
@@ -56,9 +40,6 @@ public class RDVDto {
 
     public void setDate(Date date) {
         this.date = date;
-        //notifyAll();
     }
-
-
 
 }
