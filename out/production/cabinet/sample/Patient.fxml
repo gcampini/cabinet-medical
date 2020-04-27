@@ -1,53 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:controller="sample.PatientController"
-          prefHeight="400.0" prefWidth="600.0"
-          style="-fx-background-color: grey;">
-    <columnConstraints>
-        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-    </rowConstraints>
-    <Label text="Nom" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="1"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField fx:id="ChampNom" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-    <Label text="Prenom" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="2"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField fx:id="ChampPrenom" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <Label text="Date de naissance" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="3"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <DatePicker fx:id="ChampDateNaissance" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <Label text="Profession" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="4"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField fx:id="ChampProfession" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-    <Label text="Adresse" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="5"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField fx:id="ChampAdresse" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-    <Label text="Téléphone" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="6"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField fx:id="ChampTelephone" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-    <Label text="NumeroSecuriteSociale" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="7"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField fx:id="ChampNumeroSecuriteSociale" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-    <Button text="validé" onMouseClicked="#save" style="-fx-background-color: orange;-fx-text-fill: white" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
 
 
-
-</GridPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Nom" />
+      <TextField />
+      <Label text="Prénom" />
+      <TextField />
+      <Label text="Date de Naissance" />
+      <DatePicker />
+      <Label text="Profession" />
+      <TextField />
+      <Label text="Adresse" />
+      <TextField />
+      <Label text="Téléphone" />
+      <TextField />
+      <Label text="Numéro de Sécurité Sociale" />
+      <TextField />
+      <Button mnemonicParsing="false" text="Validé" />
+   </children>
+</VBox>
