@@ -25,13 +25,13 @@ public class MainController  implements Initializable {
 
     @FXML
     public void goToRDV() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/rdv.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/rdv.fxml"));
         mainContainer.getChildren().setAll(root);
     }
 
     @FXML
     public void goToPatient() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/patient.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/patient.fxml"));
         mainContainer.getChildren().setAll(root);
     }
 
