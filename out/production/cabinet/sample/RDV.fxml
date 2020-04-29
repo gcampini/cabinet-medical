@@ -5,13 +5,14 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
+
+<?import javafx.scene.control.ComboBox?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RDVController">
    <left>
       <BorderPane prefHeight="400.0" prefWidth="250.0" style="-fx-border-width: 0 1 0 0; -fx-border-color: lightgray;" BorderPane.alignment="CENTER">
@@ -43,6 +44,8 @@
          <center>
             <VBox fx:id="form" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
                <children>
+                  <Label text="Patient" />
+                  <ComboBox fx:id="patientField" />
                   <Label text="Date" />
                   <DatePicker fx:id="dateField" />
                   <Label text="Heure" />
