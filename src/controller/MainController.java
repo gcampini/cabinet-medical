@@ -18,8 +18,7 @@ public class MainController  implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("LOL");
-        Text text = new Text("LE SENS DE JAVAFX");
+        Text text = new Text("Bienvenue dans l'application de gestion de cabinet.");
         mainContainer.getChildren().add(text);
     }
 
