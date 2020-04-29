@@ -47,7 +47,9 @@ public class RDVController implements Initializable {
 
 
     public void buildList() {
+
         rdvs = getAllRDV();
+
         ObservableList<String> data = FXCollections.observableArrayList(
                 rdvs.stream().map(rdv -> rdv.getDate() + " | " + rdv.getPatient().getNom() + " " + rdv.getPatient().getPrenom()).collect(Collectors.toList()
         ));
@@ -63,7 +65,6 @@ public class RDVController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         buildList();
-        selectRDV(null);
 
         patients = PatientController.getAllPatients();
 
@@ -86,6 +87,7 @@ public class RDVController implements Initializable {
         s.beginTransaction();
         s.delete(selectedRDV);
         s.getTransaction().commit();
+        s.close();
         buildList();
         selectRDV(null);
     }
@@ -122,6 +124,7 @@ public class RDVController implements Initializable {
         s.beginTransaction();
         List<RDVDto> rdvs = s.createQuery("FROM RDVDto", RDVDto.class).getResultList();
         s.getTransaction().commit();
+        s.close();
         return rdvs;
     }
 
@@ -147,6 +150,7 @@ public class RDVController implements Initializable {
         if (rdv.getId() == 0) s.save(rdv);
         else s.update(rdv);
         s.getTransaction().commit();
+        s.close();
     }
 
 }

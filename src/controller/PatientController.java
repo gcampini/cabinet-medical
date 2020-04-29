@@ -15,7 +15,6 @@ import org.hibernate.Session;
 import util.DBUtil;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
@@ -89,6 +88,7 @@ public class PatientController implements Initializable {
         s.beginTransaction();
         s.delete(selectedPatient);
         s.getTransaction().commit();
+        s.close();
         buildList();
         selectPatient(null);
     }
@@ -129,6 +129,7 @@ public class PatientController implements Initializable {
         s.beginTransaction();
         List<PatientDto> patients = s.createQuery("FROM PatientDto", PatientDto.class).getResultList();
         s.getTransaction().commit();
+        s.close();
         return patients;
     }
 
@@ -157,6 +158,7 @@ public class PatientController implements Initializable {
         if (patient.getId() == 0) s.save(patient);
         else s.update(patient);
         s.getTransaction().commit();
+        s.close();
     }
 
 }

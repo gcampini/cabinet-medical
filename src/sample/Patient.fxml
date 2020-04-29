@@ -42,6 +42,7 @@
          <center>
             <VBox fx:id="form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="441.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
                <children>
+                  <Label text="IMPORTANT : ne pas suprimer un patient si il a des RDV de prévu !!!" textFill="RED" />
                   <Label text="Nom" />
                   <TextField fx:id="nomField" />
                   <Label text="Prénom" />
