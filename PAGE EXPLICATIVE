@@ -1,0 +1,25 @@
+CAMPINI Gil
+LASCOUTOUNAS Mickaël
+GODIER Ludovic
+
+
+La base de données se trouve dans le fichier "database.db" à la racine.
+Nous utilisons JDBC SQLite en tant qu'interface pour communiquer avec la base.
+Nous avons utilisé hibernate pour créer la structure de la base de donnée ainsi que les relations.
+
+Nos librairies se situent dans le dossier "/lib" à la racine.
+Il faudra ajouter ces dépendences dans l'IDE avant de compiler.
+
+Pour le champ "Heure", le formattage se fait de la façon suivante : HEURE:MINUTE,
+nous l'avons indiquer sur le logiciel pour éviter toutes erreur
+Example: 14:15 est valide, 14h15 de l'est pas.
+
+Il est important de ne pas suprimer un patient si il y a des rendez-vous qui le concerne. Sinon l'aplication ne
+fonctionnera plus il faudras utilsier un outil tel que DB Browser pour enlever les RDV dans la bases de données.
+Nous avons tenté d'utilisé un outil hibernate "@OnDelete(action = OnDeleteAction.CASCADE)" pour automatisé la
+supression des RDV d'un patient si on devait le suprimer mais l'outil n'a pas fonctionner et nous avons manquez de temps
+pour résoudre ce probleme.
+Nous l'avons donc indiquez sur le logiciel, cependant si un patient devrait être suprimer il n'est pas sencé avoir de RDV
+de prévu théoriquement.
+
+Pour l'interface nous avons utilisé scene builder pour avoir un affichage assez sympatique et propre
