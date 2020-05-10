@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -34,5 +35,10 @@ public class MainController  implements Initializable {
         mainContainer.getChildren().setAll(root);
     }
 
+    @FXML
+    public void goToPrescription(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/dossier.fxml"));
+        mainContainer.getChildren().setAll(root);
+    }
 
 }

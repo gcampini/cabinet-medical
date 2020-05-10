@@ -16,7 +16,6 @@ public class Main extends Application {
         primaryStage.setTitle("Projet Génie Logiciel");
         primaryStage.setScene(new Scene(root, 1000, 750));
         primaryStage.show();
-
     }
 
     public static void main(String[] args) {

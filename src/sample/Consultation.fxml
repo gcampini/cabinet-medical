@@ -1,39 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:controller="sample.RDVController"
-          prefHeight="400.0" prefWidth="600.0"
-          style="-fx-background-color: grey;">
-    <columnConstraints>
-        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0"  />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-    </rowConstraints>
-    <Label text="Date" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="1"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <DatePicker fx:id="ChampDate" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-    <Label text="Prenom" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="2"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}"/>
-    <TextField fx:id="ChampPrenom" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <Label text="Heure" alignment="center" style="-fx-background-color: white;" GridPane.columnIndex="0" GridPane.rowIndex="4"
-           prefHeight = "${controller.RowHeight}" prefWidth="${controller.ColumnWidth}" />
-    <TextField fx:id="ChampHeure" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-    <Button text="validé" onMouseClicked="#save" style="-fx-background-color: orange;-fx-text-fill: white" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-
-
-</GridPane>
-
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="882.0" spacing="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <HBox prefHeight="79.0" prefWidth="862.0" spacing="30.0">
+               <children>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="220.0" style="-fx-border-color: gray;">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="224.0" text="Informations du  patient" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <VBox prefHeight="128.0" prefWidth="198.0" spacing="5.0">
+                     <children>
+                        <HBox prefHeight="17.0" prefWidth="600.0">
+                           <children>
+                              <Label text="Nom : " />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="600.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label text="Prénom : " />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="600.0">
+                           <children>
+                              <Label text="Date de naissance : " />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="600.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label text="Profession : " />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="600.0">
+                           <children>
+                              <Label text="Adresse : " />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="600.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label text="Téléphone : " />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="600.0">
+                           <children>
+                              <Label text="Numero de securite sociale : " />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </VBox>
+                  <VBox prefHeight="208.0" prefWidth="215.0" spacing="7.0" style="-fx-border-color: gray;">
+                     <children>
+                        <Label text="Nom du médicament" />
+                        <TextField />
+                        <Label text="Posologie" />
+                        <TextField />
+                        <Label text="Duré du traitement" />
+                        <TextField />
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="266.0" text="Ajouter" />
+                     </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+                  </VBox>
+               </children>
+            </HBox>
+      <Button mnemonicParsing="false" text="Terminer la consultation" />
+      <Button mnemonicParsing="false" text="Annuler" />
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </VBox>

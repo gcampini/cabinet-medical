@@ -14,13 +14,8 @@ Pour le champ "Heure", le formattage se fait de la façon suivante : HEURE:MINUT
 nous l'avons indiquer sur le logiciel pour éviter toutes erreur.
 Example: 14:15 est valide, 14h15 de l'est pas.
 
-Il est important de ne pas suprimer un patient si il y a des rendez-vous qui le concerne. Sinon l'aplication ne
-fonctionnera plus, il faudra alors utilsier un outil tel que DB Browser pour enlever les RDV concerné
-dans la bases de données.
-Nous avons tenté d'utiliser un outil hibernate "@OnDelete(action = OnDeleteAction.CASCADE)" pour automatiser la
-supression des RDV d'un patient si on devait le suprimer mais l'outil n'a pas fonctionné et nous avons manqué de temps
-pour résoudre ce probleme.
-Nous l'avons donc indiqué sur le logiciel, cependant si un patient devrait être suprimer il n'est pas sencé avoir de
-RDV de prévu théoriquement.
+Si on supprime un patient qui a des rendez-vous de prévu on supprimera alors logiquement tous les rendez-vous qui étaient
+prévus avec lui automatiquement. Pour ce faire nous avons utilisé l'outil hibernate CascadeType.REMOVE associé à
+@JoinColumn(name="patient_id").
 
-Pour l'interface nous avons utilisé scene builder pour avoir un affichage assez sympatique et propre
+Pour l'interface nous avons utilisé scene builder pour avoir un affichage assez sympatique et propre.

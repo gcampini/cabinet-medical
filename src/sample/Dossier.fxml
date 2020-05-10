@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label text="Nom" />
-      <TextField />
-      <Label text="Prénom" />
-      <TextField />
-      <Label text="Date" />
-      <DatePicker />
-      <Label text="Heure" />
-       <TextField />
-      <Button mnemonicParsing="false" text="Validé" />
-   </children>
-</VBox>
+<BorderPane prefHeight="593.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DossierController">
+   <left>
+      <VBox prefHeight="593.0" prefWidth="194.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField prefHeight="73.0" prefWidth="194.0" />
+            <ListView fx:id="list" prefHeight="606.0" prefWidth="0.0" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="31.0" prefWidth="638.0" style="-fx-border-color: gray;">
+               <children>
+                  <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aucun dossier selectionné" wrappingWidth="547.13671875" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Pane>
+            <Pane fx:id="content" prefHeight="561.0" prefWidth="638.0">
+               <children>
+                  <Button fx:id="createDossierButton" onAction="#createDossier" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Créer dossier" />
+                  <Button fx:id="startConsultationButton" onAction="#startConsultation" layoutX="14.0" layoutY="53.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Démarrer une consultation" />
+               </children></Pane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

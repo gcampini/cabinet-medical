@@ -23,7 +23,7 @@ public class RDVDto {
         this.id = id;
     }
 
-    @ManyToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
+    @ManyToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE })
     public PatientDto getPatient() {
         return patient;
     }

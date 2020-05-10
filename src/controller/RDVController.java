@@ -58,20 +58,16 @@ public class RDVController implements Initializable {
 
         list.setOnMouseClicked(event -> {
             int rdvIndex = list.getSelectionModel().getSelectedIndex();
-            selectRDV(rdvs.get(rdvIndex));
+            if (rdvIndex >= 0) selectRDV(rdvs.get(rdvIndex));
         });
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         buildList();
-
         patients = PatientController.getAllPatients();
-
         patientField.setItems(FXCollections.observableArrayList(
                 patients.stream().map(p -> p.getNom() + " " + p.getPrenom()).collect(Collectors.toList())));
-
-
     }
 
     @FXML

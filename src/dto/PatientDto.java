@@ -111,8 +111,8 @@ public class PatientDto {
         //notifyAll();
     }
 
-    @OneToMany
-    @JoinColumn
+    @OneToMany( cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE} )
+    @JoinColumn(name="patient_id")
     public Set<RDVDto> getRdvs() {
         return rdvs;
     }
